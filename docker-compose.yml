@@ -33,15 +33,15 @@ services:
       - postgres
     restart: always
 
-#  frontend:
-#    build:
-#      context: ./frontend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "3000:3000"
-#    restart: always
-#    depends_on:
-#      - app
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000" 
+  #   restart: always
+  #   depends_on:
+  #     - app
 
 
 
