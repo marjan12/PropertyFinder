@@ -19,7 +19,7 @@ function Footer() {
                   <Link to="/addproperty">Add Property</Link>
                 </li>
                 <li className="list-inline-item">
-                  <Link to="/agencies">Agenciy</Link>
+                  <Link to="/agencies">Agency</Link>
                 </li>
                 <li className="list-inline-item">
                   <Link to="/contact">Contact</Link>

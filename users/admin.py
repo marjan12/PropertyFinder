@@ -29,7 +29,7 @@ admin.site.register(Profile, ProfileAdmin)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ('subject', 'email', 'name')
 
-    fields = ('name', 'email', 'subject', 'message')
+    fields = ('name', 'email', 'subject', 'message','phone_number')
 
     search_fields = ('email', 'subject')
 

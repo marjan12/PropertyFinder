@@ -37,20 +37,8 @@ import {
   Typography,
 } from "@mui/material";
 
-const areaOptions = [
-  {
-    value: "",
-    label: "",
-  },
-  {
-    value: "Inner London",
-    label: "Inner London",
-  },
-  {
-    value: "Outer London",
-    label: "Outer London",
-  },
-];
+
+
 
 const divisionsOptions = [
   {
@@ -412,7 +400,7 @@ function AddProperty() {
         draft.areaErrors.errorMessage = "This field must not be empty";
         break;
 
-      case "emptyBoroug":
+      case "emptyBorough":
         draft.borougErrors.hasErrors = true;
         draft.borougErrors.errorMessage = "This field must not be empty";
         break;

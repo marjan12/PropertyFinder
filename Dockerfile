@@ -15,7 +15,8 @@ COPY . /app
 WORKDIR /app
 COPY ./scripts /scripts
 
-RUN chmod +x /scripts/*
+# RUN chmod +x /scripts/* 
+#  secirity issue
 
 CMD ["entrypoint.sh"]
 

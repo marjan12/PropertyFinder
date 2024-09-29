@@ -87,19 +87,21 @@ function Home() {
               <div className="table-cell">
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-8">
+                    <div className="col-lg-10">
                       <div className="intro-body">
-                        <p className="intro-title-top">
+                        {/* <p className="intro-title-top">
                           Doral, Florida
                           <br /> 78345
-                        </p>
+                        </p> */}
                         <h1 className="intro-title mb-4 ">
-                          <span className="color-b">204 </span> Mount
-                          <br /> Olive Road Two
+                          {/* <span className="color-b">204 </span> Mount */}
+                          <br />
+                          " বিশ্বাসের সঙ্গে সেরা জায়গা খুজুন,
+                            যেখানে শুরু হবে নতুন জীবন "
                         </h1>
                         <p className="intro-subtitle intro-price">
                           <a href="#">
-                            <span className="price-a">rent | $ 12.000</span>
+                            {/* <span className="price-a">rent | $ 12.000</span> */}
                           </a>
                         </p>
                       </div>
@@ -198,7 +200,7 @@ function Home() {
             <section className="property-grid grid">
               <div className="container">
                 <div className="row">
-                  {allListings.slice(0, 6).map((listing) => (
+                  {allListings.slice(0, 3).map((listing) => (
                     <div className="col-md-4" key={listing.id}>
                       <div className="card-box-a card-shadow">
                         <div className="img-box-a">

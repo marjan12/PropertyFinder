@@ -11,10 +11,24 @@ const Contact = () => {
   const [dataIsLoading, setDataIsLoading] = useState(false);
 
   const handleClick = async () => {
-    if (!name || !email || !subject || !message) {
-      alert("Please fill in all the fields.");
-      return;
-    }
+    // if (!name || !email || !subject || !message) {
+    //   alert("Please fill in all the fields.");
+    //   return;
+    // }
+    // Regular expression for validating email format
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!name || !email || !subject || !message) {
+  alert("Please fill in all the fields.");
+  return;
+}
+
+// Check if the email is valid
+if (!emailPattern.test(email)) {
+  alert("Please enter a valid email address.");
+  return;
+}
+
     setDataIsLoading(true);
     try {
       const response = await Axios.post("http://127.0.0.1:8001/api/contact/", {
@@ -22,6 +36,7 @@ const Contact = () => {
         email: email,
         subject: subject,
         message: message,
+        phone_number: "345",
       });
 
       setDataIsLoading(false);
@@ -32,6 +47,7 @@ const Contact = () => {
         setEmail("");
         setSubject("");
         setMessage("");
+        
       }
 
       // Handle the response as needed

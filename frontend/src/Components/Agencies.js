@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useContext } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { useImmerReducer } from "use-immer";
@@ -31,7 +31,7 @@ import {
 
 function Agencies() {
   const navigate = useNavigate();
-  const GlobalState = useContext(StateContext);
+  // const GlobalState = useContext(StateContext);
 
   const initialState = {
     dataIsLoading: true,
@@ -185,33 +185,33 @@ function Agencies() {
         <div class="container">
           <div class="row">
             {state.agenciesList.map((agency) => {
-              function PropertiesDisplay() {
-                if (agency.seller_listings.length === 0) {
-                  return (
-                    <Button disabled size="small">
-                      No Property
-                    </Button>
-                  );
-                } else if (agency.seller_listings.length === 1) {
-                  return (
-                    <Button
-                      size="small"
-                      onClick={() => navigate(`/agencies/${agency.seller}`)}
-                    >
-                      One Property listed
-                    </Button>
-                  );
-                } else {
-                  return (
-                    <Button
-                      size="small"
-                      onClick={() => navigate(`/agencies/${agency.seller}`)}
-                    >
-                      {agency.seller_listings.length} Properties
-                    </Button>
-                  );
-                }
-              }
+              // function PropertiesDisplay() {
+              //   if (agency.seller_listings.length === 0) {
+              //     return (
+              //       <Button disabled size="small">
+              //         No Property
+              //       </Button>
+              //     );
+              //   } else if (agency.seller_listings.length === 1) {
+              //     return (
+              //       <Button
+              //         size="small"
+              //         onClick={() => navigate(`/agencies/${agency.seller}`)}
+              //       >
+              //         One Property listed
+              //       </Button>
+              //     );
+              //   } else {
+              //     return (
+              //       <Button
+              //         size="small"
+              //         onClick={() => navigate(`/agencies/${agency.seller}`)}
+              //       >
+              //         {agency.seller_listings.length} Properties
+              //       </Button>
+              //     );
+              //   }
+              // }
 
               return (
                 <div className="col-md-4" key={agency.id}>
