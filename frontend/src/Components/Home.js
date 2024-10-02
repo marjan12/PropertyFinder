@@ -87,19 +87,21 @@ function Home() {
               <div className="table-cell">
                 <div className="container">
                   <div className="row">
-                    <div className="col-lg-8">
+                    <div className="col-lg-10">
                       <div className="intro-body">
-                        <p className="intro-title-top">
+                        {/* <p className="intro-title-top">
                           Doral, Florida
                           <br /> 78345
-                        </p>
+                        </p> */}
                         <h1 className="intro-title mb-4 ">
-                          <span className="color-b">204 </span> Mount
-                          <br /> Olive Road Two
+                          {/* <span className="color-b">204 </span> Mount */}
+                          <br />
+                          " বিশ্বাসের সঙ্গে সেরা জায়গা খুজুন,
+                            যেখানে শুরু হবে নতুন জীবন "
                         </h1>
                         <p className="intro-subtitle intro-price">
                           <a href="#">
-                            <span className="price-a">rent | $ 12.000</span>
+                            {/* <span className="price-a">rent | $ 12.000</span> */}
                           </a>
                         </p>
                       </div>
@@ -198,7 +200,7 @@ function Home() {
             <section className="property-grid grid">
               <div className="container">
                 <div className="row">
-                  {allListings.slice(0, 6).map((listing) => (
+                  {allListings.slice(0, 3).map((listing) => (
                     <div className="col-md-4" key={listing.id}>
                       <div className="card-box-a card-shadow">
                         <div className="img-box-a">
@@ -406,7 +408,7 @@ function Home() {
                       <div className="col-sm-12 col-md-5">
                         <div className="testimonial-img">
                           <img
-                            src="assets/img/testimonial-1.jpg"
+                            src="assets/img/slide-3.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -418,19 +420,17 @@ function Home() {
                         </div>
                         <div className="testimonials-content">
                           <p className="testimonial-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Omnis, cupiditate ea nam praesentium debitis
-                            hic ber quibusdam voluptatibus officia expedita
-                            corpori.
+                          "PropertyFinder একটি দারুণ প্ল্যাটফর্ম যারা বাড়ি কিনতে বা ভাড়া নিতে চান তাদের জন্য। ফিচারগুলি খুব সুন্দরভাবে সাজানো, যা প্রপার্টি খুঁজে পেতে সহজসাধ্য। ইন্টারেক্টিভ ম্যাপ এবং অন্যান্য ফিল্টারগুলোর সংযোজন প্ল্যাটফর্মটিকে ব্যবহারকারীদের জন্য একটি নিরবচ্ছিন্ন অভিজ্ঞতা তৈরি করতে কতটা চিন্তাভাবনা করা হয়েছে তা প্রমাণ করে।"
+
                           </p>
                         </div>
                         <div className="testimonial-author-box">
                           <img
-                            src="assets/img/mini-testimonial-1.jpg"
+                            // src="assets/img/slide-3.jpg"
                             alt=""
                             className="testimonial-avatar"
                           />
-                          <h5 className="testimonial-author">Albert & Erika</h5>
+                          {/* <h5 className="testimonial-author">Albert & Erika</h5> */}
                         </div>
                       </div>
                     </div>
@@ -443,7 +443,7 @@ function Home() {
                       <div className="col-sm-12 col-md-5">
                         <div className="testimonial-img">
                           <img
-                            src="assets/img/testimonial-2.jpg"
+                            src="assets/img/slide-3.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -467,7 +467,7 @@ function Home() {
                             alt=""
                             className="testimonial-avatar"
                           />
-                          <h5 className="testimonial-author">Pablo & Emma</h5>
+                          {/* <h5 className="testimonial-author">Pablo & Emma</h5> */}
                         </div>
                       </div>
                     </div>

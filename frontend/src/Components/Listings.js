@@ -134,6 +134,7 @@ function Listings() {
   let filteredListing = allListings?.filter((listing) =>
     listing?.title?.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
 
   if (propertyStatusFilter) {
     filteredListing = filteredListing?.filter(
@@ -360,6 +361,7 @@ function Listings() {
                       </label>
                       <input
                         type="text"
+                        placeholder="Enter any number"
                         className="form-control"
                         id="Rooms"
                         value={roomFilter}
@@ -527,7 +529,7 @@ function Listings() {
                         onClick={() =>
                           state.mapInstance.flyTo(
                             [listing.latitude, listing.longitude],
-                            16
+                            8
                           )
                         }
                       >
@@ -622,10 +624,10 @@ function Listings() {
                 zoom={7}
                 scrollWheelZoom={true}
                 minZoom={7}
-                maxBounds={[
-                  [20.55, 88.01],
-                  [26.63, 92.67],
-                ]} // Bounding box for Bangladesh
+                // maxBounds={[
+                //   [20.55, 88.01],
+                //   [26.63, 92.67],
+                // ]} // Bounding box for Bangladesh
                 maxBoundsViscosity={1.0} // Ensures the map cannot be dragged outside the bounds
               >
                 <TileLayer
