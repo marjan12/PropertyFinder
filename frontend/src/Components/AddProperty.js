@@ -37,20 +37,8 @@ import {
   Typography,
 } from "@mui/material";
 
-const areaOptions = [
-  {
-    value: "",
-    label: "",
-  },
-  {
-    value: "Inner London",
-    label: "Inner London",
-  },
-  {
-    value: "Outer London",
-    label: "Outer London",
-  },
-];
+
+
 
 const divisionsOptions = [
   {
@@ -412,7 +400,7 @@ function AddProperty() {
         draft.areaErrors.errorMessage = "This field must not be empty";
         break;
 
-      case "emptyBoroug":
+      case "emptyBorough":
         draft.borougErrors.hasErrors = true;
         draft.borougErrors.errorMessage = "This field must not be empty";
         break;
@@ -1121,7 +1109,7 @@ function AddProperty() {
         <Grid item container sx={{ height: "35rem", marginTop: "1rem" }}>
           <MapContainer
             center={[23.685, 90.3563]} // Coordinates for Dhaka, Bangladesh
-            zoom={7}
+            zoom={5}
             scrollWheelZoom={true}
             minZoom={7}
             maxBounds={[

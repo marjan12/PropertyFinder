@@ -41,6 +41,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_COOKIE_SECURE = False
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8001',
+    'https://super-duper-space-memory-grg64wv5g6x3v5jv-8001.app.github.dev',  # Replace with your actual GitHub Codespace URL
+]
+
 
 # Application definition
 

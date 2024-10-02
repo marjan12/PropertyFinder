@@ -11,10 +11,24 @@ const Contact = () => {
   const [dataIsLoading, setDataIsLoading] = useState(false);
 
   const handleClick = async () => {
-    if (!name || !email || !subject || !message) {
-      alert("Please fill in all the fields.");
-      return;
-    }
+    // if (!name || !email || !subject || !message) {
+    //   alert("Please fill in all the fields.");
+    //   return;
+    // }
+    // Regular expression for validating email format
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!name || !email || !subject || !message) {
+  alert("Please fill in all the fields.");
+  return;
+}
+
+// Check if the email is valid
+if (!emailPattern.test(email)) {
+  alert("Please enter a valid email address.");
+  return;
+}
+
     setDataIsLoading(true);
     try {
       const response = await Axios.post("http://127.0.0.1:8001/api/contact/", {
@@ -22,6 +36,7 @@ const Contact = () => {
         email: email,
         subject: subject,
         message: message,
+        // phone_number: "345",
       });
 
       setDataIsLoading(false);
@@ -32,6 +47,7 @@ const Contact = () => {
         setEmail("");
         setSubject("");
         setMessage("");
+        
       }
 
       // Handle the response as needed
@@ -51,15 +67,13 @@ const Contact = () => {
               <div className="title-single-box">
                 <h1 className="title-single">Contact US</h1>
                 <span className="color-text-a">
-                  We are here to help you connect with the causes that matter
-                  most. Whether you have questions about our services, need
-                  assistance with your donation, or just want to learn more
-                  about how you can make a difference, our team is ready to
-                  support you every step of the way. Your voice and your
-                  generosity are vital to our mission, and we’re committed to
-                  ensuring you have a seamless and rewarding experience. Reach
-                  out to us, and together, let's make a positive impact on the
-                  Bangladesh.
+                আমরা আপনাকে আমাদের সাথে যোগাযোগ করতে আন্তরিকভাবে স্বাগত জানাই ! 
+                আমাদের সেবা সম্পর্কে আপনার কোনো প্রশ্ন থাকলে বা কোনো সাহায্য প্রয়োজন হলে, 
+                আমরা সবসময় সহায়তার জন্য প্রস্তুত। আপনার মতামত এবং প্রশ্ন আমাদের জন্য অত্যন্ত মূল্যবান  
+                এবং আমরা আপনাকে উৎসাহিত করি যদি আপনি কোনো সমস্যার সম্মুখীন হন বা আমাদের সেবার 
+                ব্যাপারে কোনো পরামর্শ থাকে তবে তা জানাতে। আমাদের টিম সর্বোত্তম সেবা প্রদান করতে প্রতিশ্রুতিবদ্ধ 
+                এবং আমরা আপনার যেকোনো প্রশ্ন বা সমস্যায় সাহায্য করতে প্রস্তুত। আমাদের সাথে যোগাযোগ করতে দ্বিধা 
+                করবেন না—আমরা আপনার বার্তার অপেক্ষায় রয়েছি!
                 </span>
               </div>
             </div>
@@ -111,7 +125,7 @@ const Contact = () => {
                             type="text"
                             name="name"
                             className="form-control form-control-lg form-control-a"
-                            placeholder="Your Name"
+                            placeholder="নাম"
                             required
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -124,7 +138,7 @@ const Contact = () => {
                             name="email"
                             type="email"
                             className="form-control form-control-lg form-control-a"
-                            placeholder="Your Email"
+                            placeholder="ইমেইল"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -137,7 +151,7 @@ const Contact = () => {
                             type="text"
                             name="subject"
                             className="form-control form-control-lg form-control-a"
-                            placeholder="Subject"
+                            placeholder="অভিযোগ বা মতামতের বিষয়"
                             required
                             value={subject}
                             onChange={(e) => setSubject(e.target.value)}
@@ -151,7 +165,7 @@ const Contact = () => {
                             className="form-control"
                             cols="45"
                             rows="8"
-                            placeholder="Message"
+                            placeholder="অনুগ্রহপূর্বক যেকোনো প্রকার মতামত/অভিযোগ প্রদান করুন"
                             required
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Axios from "axios";
 import { useImmerReducer } from "use-immer";
@@ -165,7 +165,7 @@ function ListingDetail() {
     } else {
       return setCurrentPicture(currentPicture + 1);
     }
-  }
+  }          
 
   function PreviousPicture() {
     if (currentPicture === 0) {
@@ -176,6 +176,8 @@ function ListingDetail() {
   }
 
   const date = new Date(state.listingInfo.date_posted);
+  console.log("state",state);
+  
   const formattedDate = `${
     date.getMonth() + 1
   }/${date.getDate()}/${date.getFullYear()}`;
@@ -521,10 +523,10 @@ function ListingDetail() {
         item
         container
         style={{ marginTop: "1rem" }}
-        spacing={2}
-        justifyContent="space-between"
+        // spacing={2}
+        justifyContent="center"
       >
-        <Grid item xs={4} style={{ overflow: "auto", height: "30rem" }}>
+        {/* <Grid item xs={4} style={{ overflow: "auto", height: "30rem" }}>
           {state.listingInfo.listing_pois_within_10km.map((poi) => {
             function DegreeToRadian(coordinate) {
               return (coordinate * Math.PI) / 180;
@@ -580,8 +582,8 @@ function ListingDetail() {
               </div>
             );
           })}
-        </Grid>
-        <Grid item xs={8} style={{ height: "30rem" }}>
+        </Grid> */}
+        <Grid item xs={12} style={{ height: "30rem" }}>
           <MapContainer
             center={[state.listingInfo.latitude, state.listingInfo.longitude]}
             zoom={14}

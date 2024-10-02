@@ -7,22 +7,22 @@ from .forms import PoisForm
 # Register your models here.
 
 
-class PoiAdmin(admin.ModelAdmin):
-    form = PoisForm
+# class PoiAdmin(admin.ModelAdmin):
+#     form = PoisForm
 
-    list_display = ('name', 'type')
-    fields = ('name', 'type', 'latitude', 'longitude')
-    list_filter = ('type',)
+#     list_display = ('name', 'type')
+#     fields = ('name', 'type', 'latitude', 'longitude')
+#     list_filter = ('type',)
 
-    search_fields = ('name',)
+#     search_fields = ('name',)
 
 
-# admin.site.register(Listing)
-admin.site.register(Poi, PoiAdmin)
+# # admin.site.register(Listing)
+# admin.site.register(Poi, PoiAdmin)
 
 
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'listing_type', 'price', 'borough', 'seller',)
+    list_display = ('title', 'listing_type', 'price', 'borough', 'seller','property_status')
 
     # fields = '__all__'
 

@@ -1,36 +1,22 @@
-import React, { useEffect, useState, useRef, useMemo, useContext } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import Axios from "axios";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useImmerReducer } from "use-immer";
 
 // Contexts
-import StateContext from "../Contexts/StateContext";
 
 // Assets
 import defaultProfilePicture from "./Assets/defaultProfilePicture.jpg";
 
 // MUI
 import {
-  Grid,
-  AppBar,
-  Typography,
-  Button,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
   CircularProgress,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  IconButton,
-  CardActions,
+  Grid
 } from "@mui/material";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 function AgencyDetail() {
-  const navigate = useNavigate();
-  const GlobalState = useContext(StateContext);
+  // const navigate = useNavigate();
+  // const GlobalState = useContext(StateContext);
 
   const params = useParams();
 
@@ -79,7 +65,7 @@ function AgencyDetail() {
       } catch (e) {}
     }
     GetProfileInfo();
-  }, []);
+  }, []); 
 
   if (state.dataIsLoading === true) {
     return (
